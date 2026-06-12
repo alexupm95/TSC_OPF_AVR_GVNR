@@ -1,0 +1,62 @@
+{
+  "C:\\Users\\Usuario\\Git_Repos\\Codigos_Jorge\\TSC_OPF_AVR_GVNR\\AF_CLEAN_TERMINAL.jl": {
+    "mtime": 1742813155.9082003,
+    "ast_hash": "3c040c070039d9a62e08c232448c9da3",
+    "semantic_hash": "3c040c070039d9a62e08c232448c9da3"
+  },
+  "C:\\Users\\Usuario\\Git_Repos\\Codigos_Jorge\\TSC_OPF_AVR_GVNR\\AF_DERIVATIVE_TECHINIQUES.jl": {
+    "mtime": 1754981532.5808723,
+    "ast_hash": "5132b8304f3a671fdf070eb7a4a7507f",
+    "semantic_hash": "5132b8304f3a671fdf070eb7a4a7507f"
+  },
+  "C:\\Users\\Usuario\\Git_Repos\\Codigos_Jorge\\TSC_OPF_AVR_GVNR\\AF_MANAGEMENT.jl": {
+    "mtime": 1762876081.07055,
+    "ast_hash": "a9a81574098f9d0dffebce8d1b72c65c",
+    "semantic_hash": "a9a81574098f9d0dffebce8d1b72c65c"
+  },
+  "C:\\Users\\Usuario\\Git_Repos\\Codigos_Jorge\\TSC_OPF_AVR_GVNR\\AF_READ_DATA.jl": {
+    "mtime": 1773865073.673453,
+    "ast_hash": "1a0cad0e9b311cfcb65a99cbeef72e2c",
+    "semantic_hash": "1a0cad0e9b311cfcb65a99cbeef72e2c"
+  },
+  "C:\\Users\\Usuario\\Git_Repos\\Codigos_Jorge\\TSC_OPF_AVR_GVNR\\AF_SAVE_OUTPUT.jl": {
+    "mtime": 1773909588.1359775,
+    "ast_hash": "43c77c2c33330928b97e1813a8231267",
+    "semantic_hash": "43c77c2c33330928b97e1813a8231267"
+  },
+  "C:\\Users\\Usuario\\Git_Repos\\Codigos_Jorge\\TSC_OPF_AVR_GVNR\\AF_YBUS_SPARSE.jl": {
+    "mtime": 1773318606.1754186,
+    "ast_hash": "2999218168c4efe1ddf139033bf08430",
+    "semantic_hash": "2999218168c4efe1ddf139033bf08430"
+  },
+  "C:\\Users\\Usuario\\Git_Repos\\Codigos_Jorge\\TSC_OPF_AVR_GVNR\\BUILD_ACOPF_MODEL_KCL.jl": {
+    "mtime": 1773339070.5121238,
+    "ast_hash": "cdb2854abee1aeb79e1e1dd612d3c988",
+    "semantic_hash": "cdb2854abee1aeb79e1e1dd612d3c988"
+  },
+  "C:\\Users\\Usuario\\Git_Repos\\Codigos_Jorge\\TSC_OPF_AVR_GVNR\\BUILD_TSC_NOSPEED.jl": {
+    "mtime": 1775661977.0796573,
+    "ast_hash": "28afb687bbcafc1cbe43056a430ebe32",
+    "semantic_hash": "28afb687bbcafc1cbe43056a430ebe32"
+  },
+  "C:\\Users\\Usuario\\Git_Repos\\Codigos_Jorge\\TSC_OPF_AVR_GVNR\\Main_ACOPF_WARMUP.jl": {
+    "mtime": 1781249065.5890448,
+    "ast_hash": "b83db11f501f6a53c90ae390d91733c1",
+    "semantic_hash": "b83db11f501f6a53c90ae390d91733c1"
+  },
+  "C:\\Users\\Usuario\\Git_Repos\\Codigos_Jorge\\TSC_OPF_AVR_GVNR\\Input_Data\\9bus\\generators_data_paperUC3M.txt": {
+    "mtime": 1755000726.1171887,
+    "ast_hash": "a416e21ae9bcd59dd38fa4f171546670",
+    "semantic_hash": "a416e21ae9bcd59dd38fa4f171546670"
+  },
+  "C:\\Users\\Usuario\\Git_Repos\\Codigos_Jorge\\TSC_OPF_AVR_GVNR\\graphify-out\\converted\\Contingency List_4bcb6975.md": {
+    "mtime": 1781250606.7550268,
+    "ast_hash": "dfc5eceffefa54cbaab2e763f65e7508",
+    "semantic_hash": "dfc5eceffefa54cbaab2e763f65e7508"
+  },
+  "C:\\Users\\Usuario\\Git_Repos\\Codigos_Jorge\\TSC_OPF_AVR_GVNR\\graphify-out\\converted\\Contingency List_562779c0.md": {
+    "mtime": 1781250606.7631464,
+    "ast_hash": "a9cfc67180ecd37f53e37c6d4b9011dc",
+    "semantic_hash": "a9cfc67180ecd37f53e37c6d4b9011dc"
+  }
+}

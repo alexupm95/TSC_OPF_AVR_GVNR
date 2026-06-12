@@ -1,0 +1,2304 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {
+    "hyperedges": [
+      {
+        "id": "tsc_opf_full_pipeline",
+        "label": "TSC-OPF Full Solution Pipeline (warm-start ACOPF then TSC)",
+        "nodes": [
+          "main_acopf_warmup_main",
+          "build_acopf_model_kcl_make_acopf_model",
+          "build_tsc_nospeed_def_dyn_fault_all",
+          "build_tsc_nospeed_def_dyn_postf_all",
+          "af_save_output_manage_dyn_results"
+        ],
+        "relation": "participate_in",
+        "confidence": "EXTRACTED",
+        "confidence_score": 1.0,
+        "source_file": "Main_ACOPF_WARMUP.jl"
+      },
+      {
+        "id": "ybus_three_periods",
+        "label": "Admittance Matrix for Three Operating Periods (pre-fault, fault, post-fault)",
+        "nodes": [
+          "af_ybus_sparse_calculate_ybus",
+          "af_ybus_sparse_calculate_ybus_fault",
+          "af_ybus_sparse_calculate_ybus_postf"
+        ],
+        "relation": "implement",
+        "confidence": "INFERRED",
+        "confidence_score": 0.95,
+        "source_file": "AF_YBUS_SPARSE.jl"
+      },
+      {
+        "id": "dynamic_model_components",
+        "label": "Dynamic Generator Model Components (AVR, Governor, Swing, 4th-Order EMF, COI)",
+        "nodes": [
+          "concept_avr",
+          "concept_governor",
+          "concept_swing_equation",
+          "concept_4th_order_generator",
+          "concept_coi"
+        ],
+        "relation": "form",
+        "confidence": "INFERRED",
+        "confidence_score": 0.95,
+        "source_file": "BUILD_TSC_NOSPEED.jl"
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "label": "AF_CLEAN_TERMINAL.jl",
+      "file_type": "code",
+      "source_file": "AF_CLEAN_TERMINAL.jl",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "af_clean_terminal",
+      "community": 1,
+      "norm_label": "af_clean_terminal.jl"
+    },
+    {
+      "label": "Clean_Terminal()",
+      "file_type": "code",
+      "source_file": "AF_CLEAN_TERMINAL.jl",
+      "source_location": "L2",
+      "_origin": "ast",
+      "id": "af_clean_terminal_clean_terminal",
+      "community": 1,
+      "norm_label": "clean_terminal()"
+    },
+    {
+      "label": "AF_DERIVATIVE_TECHINIQUES.jl",
+      "file_type": "code",
+      "source_file": "AF_DERIVATIVE_TECHINIQUES.jl",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "af_derivative_techiniques",
+      "community": 5,
+      "norm_label": "af_derivative_techiniques.jl"
+    },
+    {
+      "label": "Calculate_Derivatives_Lagrange_Interpolator()",
+      "file_type": "code",
+      "source_file": "AF_DERIVATIVE_TECHINIQUES.jl",
+      "source_location": "L11",
+      "_origin": "ast",
+      "id": "af_derivative_techiniques_calculate_derivatives_lagrange_interpolator",
+      "community": 5,
+      "norm_label": "calculate_derivatives_lagrange_interpolator()"
+    },
+    {
+      "label": "Calculate_Derivatives_CFDD()",
+      "file_type": "code",
+      "source_file": "AF_DERIVATIVE_TECHINIQUES.jl",
+      "source_location": "L48",
+      "_origin": "ast",
+      "id": "af_derivative_techiniques_calculate_derivatives_cfdd",
+      "community": 5,
+      "norm_label": "calculate_derivatives_cfdd()"
+    },
+    {
+      "label": "Calculate_Derivative_CFD()",
+      "file_type": "code",
+      "source_file": "AF_DERIVATIVE_TECHINIQUES.jl",
+      "source_location": "L86",
+      "_origin": "ast",
+      "id": "af_derivative_techiniques_calculate_derivative_cfd",
+      "community": 5,
+      "norm_label": "calculate_derivative_cfd()"
+    },
+    {
+      "label": "AF_MANAGEMENT.jl",
+      "file_type": "code",
+      "source_file": "AF_MANAGEMENT.jl",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "af_management",
+      "community": 1,
+      "norm_label": "af_management.jl"
+    },
+    {
+      "label": "Calculate_AC_Power_Flow()",
+      "file_type": "code",
+      "source_file": "AF_MANAGEMENT.jl",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "af_management_calculate_ac_power_flow",
+      "community": 1,
+      "norm_label": "calculate_ac_power_flow()"
+    },
+    {
+      "label": "Manage_Bus_Gen_Circ()",
+      "file_type": "code",
+      "source_file": "AF_MANAGEMENT.jl",
+      "source_location": "L87",
+      "_origin": "ast",
+      "id": "af_management_manage_bus_gen_circ",
+      "community": 1,
+      "norm_label": "manage_bus_gen_circ()"
+    },
+    {
+      "label": "AF_READ_DATA.jl",
+      "file_type": "code",
+      "source_file": "AF_READ_DATA.jl",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "af_read_data",
+      "community": 6,
+      "norm_label": "af_read_data.jl"
+    },
+    {
+      "label": "Read_Input_Data()",
+      "file_type": "code",
+      "source_file": "AF_READ_DATA.jl",
+      "source_location": "L2",
+      "_origin": "ast",
+      "id": "af_read_data_read_input_data",
+      "community": 6,
+      "norm_label": "read_input_data()"
+    },
+    {
+      "label": "Mapping_Buses_Labels()",
+      "file_type": "code",
+      "source_file": "AF_READ_DATA.jl",
+      "source_location": "L201",
+      "_origin": "ast",
+      "id": "af_read_data_mapping_buses_labels",
+      "community": 6,
+      "norm_label": "mapping_buses_labels()"
+    },
+    {
+      "label": "Change_Buses_Labels()",
+      "file_type": "code",
+      "source_file": "AF_READ_DATA.jl",
+      "source_location": "L216",
+      "_origin": "ast",
+      "id": "af_read_data_change_buses_labels",
+      "community": 6,
+      "norm_label": "change_buses_labels()"
+    },
+    {
+      "label": "Reverse_Buses_Labels()",
+      "file_type": "code",
+      "source_file": "AF_READ_DATA.jl",
+      "source_location": "L229",
+      "_origin": "ast",
+      "id": "af_read_data_reverse_buses_labels",
+      "community": 6,
+      "norm_label": "reverse_buses_labels()"
+    },
+    {
+      "label": "AF_SAVE_OUTPUT.jl",
+      "file_type": "code",
+      "source_file": "AF_SAVE_OUTPUT.jl",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "af_save_output",
+      "community": 2,
+      "norm_label": "af_save_output.jl"
+    },
+    {
+      "label": "Print_Input_Parameters()",
+      "file_type": "code",
+      "source_file": "AF_SAVE_OUTPUT.jl",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "af_save_output_print_input_parameters",
+      "community": 2,
+      "norm_label": "print_input_parameters()"
+    },
+    {
+      "label": "Export_ACOPF_Model()",
+      "file_type": "code",
+      "source_file": "AF_SAVE_OUTPUT.jl",
+      "source_location": "L54",
+      "_origin": "ast",
+      "id": "af_save_output_export_acopf_model",
+      "community": 2,
+      "norm_label": "export_acopf_model()"
+    },
+    {
+      "label": "Save_Solution_Model_KCL()",
+      "file_type": "code",
+      "source_file": "AF_SAVE_OUTPUT.jl",
+      "source_location": "L201",
+      "_origin": "ast",
+      "id": "af_save_output_save_solution_model_kcl",
+      "community": 2,
+      "norm_label": "save_solution_model_kcl()"
+    },
+    {
+      "label": "Save_ResultsCSV_ACOPF()",
+      "file_type": "code",
+      "source_file": "AF_SAVE_OUTPUT.jl",
+      "source_location": "L356",
+      "_origin": "ast",
+      "id": "af_save_output_save_resultscsv_acopf",
+      "community": 2,
+      "norm_label": "save_resultscsv_acopf()"
+    },
+    {
+      "label": "Save_ResultsTXT_ACOPF()",
+      "file_type": "code",
+      "source_file": "AF_SAVE_OUTPUT.jl",
+      "source_location": "L417",
+      "_origin": "ast",
+      "id": "af_save_output_save_resultstxt_acopf",
+      "community": 2,
+      "norm_label": "save_resultstxt_acopf()"
+    },
+    {
+      "label": "Manage_Dyn_Results()",
+      "file_type": "code",
+      "source_file": "AF_SAVE_OUTPUT.jl",
+      "source_location": "L496",
+      "_origin": "ast",
+      "id": "af_save_output_manage_dyn_results",
+      "community": 2,
+      "norm_label": "manage_dyn_results()"
+    },
+    {
+      "label": "Save_Dyn_Results_CSV()",
+      "file_type": "code",
+      "source_file": "AF_SAVE_OUTPUT.jl",
+      "source_location": "L794",
+      "_origin": "ast",
+      "id": "af_save_output_save_dyn_results_csv",
+      "community": 2,
+      "norm_label": "save_dyn_results_csv()"
+    },
+    {
+      "label": "Save_Dyn_Results_Plots()",
+      "file_type": "code",
+      "source_file": "AF_SAVE_OUTPUT.jl",
+      "source_location": "L987",
+      "_origin": "ast",
+      "id": "af_save_output_save_dyn_results_plots",
+      "community": 2,
+      "norm_label": "save_dyn_results_plots()"
+    },
+    {
+      "label": "Export_Dyn_Model()",
+      "file_type": "code",
+      "source_file": "AF_SAVE_OUTPUT.jl",
+      "source_location": "L1233",
+      "_origin": "ast",
+      "id": "af_save_output_export_dyn_model",
+      "community": 2,
+      "norm_label": "export_dyn_model()"
+    },
+    {
+      "label": "Save_Duals_Dynamic_Model()",
+      "file_type": "code",
+      "source_file": "AF_SAVE_OUTPUT.jl",
+      "source_location": "L1424",
+      "_origin": "ast",
+      "id": "af_save_output_save_duals_dynamic_model",
+      "community": 2,
+      "norm_label": "save_duals_dynamic_model()"
+    },
+    {
+      "label": "Save_Duals_ACOPF_Model()",
+      "file_type": "code",
+      "source_file": "AF_SAVE_OUTPUT.jl",
+      "source_location": "L1575",
+      "_origin": "ast",
+      "id": "af_save_output_save_duals_acopf_model",
+      "community": 2,
+      "norm_label": "save_duals_acopf_model()"
+    },
+    {
+      "label": "AF_YBUS_SPARSE.jl",
+      "file_type": "code",
+      "source_file": "AF_YBUS_SPARSE.jl",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "af_ybus_sparse",
+      "community": 1,
+      "norm_label": "af_ybus_sparse.jl"
+    },
+    {
+      "label": "Calculate_Ybus()",
+      "file_type": "code",
+      "source_file": "AF_YBUS_SPARSE.jl",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "af_ybus_sparse_calculate_ybus",
+      "community": 1,
+      "norm_label": "calculate_ybus()"
+    },
+    {
+      "label": "Calculate_Ybus_fault()",
+      "file_type": "code",
+      "source_file": "AF_YBUS_SPARSE.jl",
+      "source_location": "L62",
+      "_origin": "ast",
+      "id": "af_ybus_sparse_calculate_ybus_fault",
+      "community": 1,
+      "norm_label": "calculate_ybus_fault()"
+    },
+    {
+      "label": "Calculate_Ybus_postf()",
+      "file_type": "code",
+      "source_file": "AF_YBUS_SPARSE.jl",
+      "source_location": "L73",
+      "_origin": "ast",
+      "id": "af_ybus_sparse_calculate_ybus_postf",
+      "community": 1,
+      "norm_label": "calculate_ybus_postf()"
+    },
+    {
+      "label": "BUILD_ACOPF_MODEL_KCL.jl",
+      "file_type": "code",
+      "source_file": "BUILD_ACOPF_MODEL_KCL.jl",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "build_acopf_model_kcl",
+      "community": 1,
+      "norm_label": "build_acopf_model_kcl.jl"
+    },
+    {
+      "label": "Make_ACOPF_Model!()",
+      "file_type": "code",
+      "source_file": "BUILD_ACOPF_MODEL_KCL.jl",
+      "source_location": "L2",
+      "_origin": "ast",
+      "id": "build_acopf_model_kcl_make_acopf_model",
+      "community": 1,
+      "norm_label": "make_acopf_model!()"
+    },
+    {
+      "label": "BUILD_TSC_NOSPEED.jl",
+      "file_type": "code",
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "build_tsc_nospeed",
+      "community": 3,
+      "norm_label": "build_tsc_nospeed.jl"
+    },
+    {
+      "label": "Define_Dyn_Var_E\u03b4Pm!()",
+      "file_type": "code",
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "build_tsc_nospeed_define_dyn_var_e\u03b4pm",
+      "community": 3,
+      "norm_label": "define_dyn_var_e\u03b4pm!()"
+    },
+    {
+      "label": "Def_Dyn_Fault_All!()",
+      "file_type": "code",
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": "L171",
+      "_origin": "ast",
+      "id": "build_tsc_nospeed_def_dyn_fault_all",
+      "community": 4,
+      "norm_label": "def_dyn_fault_all!()"
+    },
+    {
+      "label": "Def_Dyn_Fault_COI!()",
+      "file_type": "code",
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": "L331",
+      "_origin": "ast",
+      "id": "build_tsc_nospeed_def_dyn_fault_coi",
+      "community": 7,
+      "norm_label": "def_dyn_fault_coi!()"
+    },
+    {
+      "label": "Def_Dyn_Fault_rel_COI!()",
+      "file_type": "code",
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": "L362",
+      "_origin": "ast",
+      "id": "build_tsc_nospeed_def_dyn_fault_rel_coi",
+      "community": 4,
+      "norm_label": "def_dyn_fault_rel_coi!()"
+    },
+    {
+      "label": "Def_Dyn_Fault_eqconst_PeQe!()",
+      "file_type": "code",
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": "L402",
+      "_origin": "ast",
+      "id": "build_tsc_nospeed_def_dyn_fault_eqconst_peqe",
+      "community": 8,
+      "norm_label": "def_dyn_fault_eqconst_peqe!()"
+    },
+    {
+      "label": "Def_Dyn_Fault_Swing!()",
+      "file_type": "code",
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": "L556",
+      "_origin": "ast",
+      "id": "build_tsc_nospeed_def_dyn_fault_swing",
+      "community": 4,
+      "norm_label": "def_dyn_fault_swing!()"
+    },
+    {
+      "label": "Def_Dyn_Fault_EMF!()",
+      "file_type": "code",
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": "L614",
+      "_origin": "ast",
+      "id": "build_tsc_nospeed_def_dyn_fault_emf",
+      "community": 4,
+      "norm_label": "def_dyn_fault_emf!()"
+    },
+    {
+      "label": "Def_Dyn_PostF_All!()",
+      "file_type": "code",
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": "L678",
+      "_origin": "ast",
+      "id": "build_tsc_nospeed_def_dyn_postf_all",
+      "community": 3,
+      "norm_label": "def_dyn_postf_all!()"
+    },
+    {
+      "label": "Def_Dyn_PostF_COI!()",
+      "file_type": "code",
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": "L815",
+      "_origin": "ast",
+      "id": "build_tsc_nospeed_def_dyn_postf_coi",
+      "community": 7,
+      "norm_label": "def_dyn_postf_coi!()"
+    },
+    {
+      "label": "Def_Dyn_PostF_rel_COI!()",
+      "file_type": "code",
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": "L843",
+      "_origin": "ast",
+      "id": "build_tsc_nospeed_def_dyn_postf_rel_coi",
+      "community": 3,
+      "norm_label": "def_dyn_postf_rel_coi!()"
+    },
+    {
+      "label": "Def_Dyn_PostF_eqconst_PeQe!()",
+      "file_type": "code",
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": "L873",
+      "_origin": "ast",
+      "id": "build_tsc_nospeed_def_dyn_postf_eqconst_peqe",
+      "community": 8,
+      "norm_label": "def_dyn_postf_eqconst_peqe!()"
+    },
+    {
+      "label": "Def_Dyn_PostF_Swing!()",
+      "file_type": "code",
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": "L1011",
+      "_origin": "ast",
+      "id": "build_tsc_nospeed_def_dyn_postf_swing",
+      "community": 3,
+      "norm_label": "def_dyn_postf_swing!()"
+    },
+    {
+      "label": "Def_Dyn_PostF_EMF!()",
+      "file_type": "code",
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": "L1072",
+      "_origin": "ast",
+      "id": "build_tsc_nospeed_def_dyn_postf_emf",
+      "community": 3,
+      "norm_label": "def_dyn_postf_emf!()"
+    },
+    {
+      "label": "Def_Dyn_Init_Exciter!()",
+      "file_type": "code",
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": "L1137",
+      "_origin": "ast",
+      "id": "build_tsc_nospeed_def_dyn_init_exciter",
+      "community": 3,
+      "norm_label": "def_dyn_init_exciter!()"
+    },
+    {
+      "label": "Def_Dyn_Fault_Exciter!()",
+      "file_type": "code",
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": "L1166",
+      "_origin": "ast",
+      "id": "build_tsc_nospeed_def_dyn_fault_exciter",
+      "community": 4,
+      "norm_label": "def_dyn_fault_exciter!()"
+    },
+    {
+      "label": "Def_Dyn_PostF_Exciter!()",
+      "file_type": "code",
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": "L1236",
+      "_origin": "ast",
+      "id": "build_tsc_nospeed_def_dyn_postf_exciter",
+      "community": 3,
+      "norm_label": "def_dyn_postf_exciter!()"
+    },
+    {
+      "label": "Def_Dyn_Init_Governor!()",
+      "file_type": "code",
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": "L1307",
+      "_origin": "ast",
+      "id": "build_tsc_nospeed_def_dyn_init_governor",
+      "community": 3,
+      "norm_label": "def_dyn_init_governor!()"
+    },
+    {
+      "label": "Def_Dyn_Fault_Governor!()",
+      "file_type": "code",
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": "L1340",
+      "_origin": "ast",
+      "id": "build_tsc_nospeed_def_dyn_fault_governor",
+      "community": 4,
+      "norm_label": "def_dyn_fault_governor!()"
+    },
+    {
+      "label": "Def_Dyn_PostF_Governor!()",
+      "file_type": "code",
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": "L1418",
+      "_origin": "ast",
+      "id": "build_tsc_nospeed_def_dyn_postf_governor",
+      "community": 3,
+      "norm_label": "def_dyn_postf_governor!()"
+    },
+    {
+      "label": "Main_ACOPF_WARMUP.jl",
+      "file_type": "code",
+      "source_file": "Main_ACOPF_WARMUP.jl",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "main_acopf_warmup",
+      "community": 0,
+      "norm_label": "main_acopf_warmup.jl"
+    },
+    {
+      "label": "LinearAlgebra",
+      "file_type": "code",
+      "source_file": "Main_ACOPF_WARMUP.jl",
+      "source_location": "L23",
+      "_origin": "ast",
+      "id": "linearalgebra",
+      "community": 0,
+      "norm_label": "linearalgebra"
+    },
+    {
+      "label": "SparseArrays",
+      "file_type": "code",
+      "source_file": "Main_ACOPF_WARMUP.jl",
+      "source_location": "L23",
+      "_origin": "ast",
+      "id": "sparsearrays",
+      "community": 0,
+      "norm_label": "sparsearrays"
+    },
+    {
+      "label": "Dates",
+      "file_type": "code",
+      "source_file": "Main_ACOPF_WARMUP.jl",
+      "source_location": "L26",
+      "_origin": "ast",
+      "id": "dates",
+      "community": 0,
+      "norm_label": "dates"
+    },
+    {
+      "label": "NumericIO",
+      "file_type": "code",
+      "source_file": "Main_ACOPF_WARMUP.jl",
+      "source_location": "L26",
+      "_origin": "ast",
+      "id": "numericio",
+      "community": 0,
+      "norm_label": "numericio"
+    },
+    {
+      "label": "DataFrames",
+      "file_type": "code",
+      "source_file": "Main_ACOPF_WARMUP.jl",
+      "source_location": "L26",
+      "_origin": "ast",
+      "id": "dataframes",
+      "community": 0,
+      "norm_label": "dataframes"
+    },
+    {
+      "label": "Printf",
+      "file_type": "code",
+      "source_file": "Main_ACOPF_WARMUP.jl",
+      "source_location": "L26",
+      "_origin": "ast",
+      "id": "printf",
+      "community": 0,
+      "norm_label": "printf"
+    },
+    {
+      "label": "CSV",
+      "file_type": "code",
+      "source_file": "Main_ACOPF_WARMUP.jl",
+      "source_location": "L26",
+      "_origin": "ast",
+      "id": "csv",
+      "community": 0,
+      "norm_label": "csv"
+    },
+    {
+      "label": "DataStructures",
+      "file_type": "code",
+      "source_file": "Main_ACOPF_WARMUP.jl",
+      "source_location": "L26",
+      "_origin": "ast",
+      "id": "datastructures",
+      "community": 0,
+      "norm_label": "datastructures"
+    },
+    {
+      "label": "JuMP",
+      "file_type": "code",
+      "source_file": "Main_ACOPF_WARMUP.jl",
+      "source_location": "L29",
+      "_origin": "ast",
+      "id": "jump",
+      "community": 0,
+      "norm_label": "jump"
+    },
+    {
+      "label": "Ipopt",
+      "file_type": "code",
+      "source_file": "Main_ACOPF_WARMUP.jl",
+      "source_location": "L29",
+      "_origin": "ast",
+      "id": "ipopt",
+      "community": 0,
+      "norm_label": "ipopt"
+    },
+    {
+      "label": "MadNLP",
+      "file_type": "code",
+      "source_file": "Main_ACOPF_WARMUP.jl",
+      "source_location": "L29",
+      "_origin": "ast",
+      "id": "madnlp",
+      "community": 0,
+      "norm_label": "madnlp"
+    },
+    {
+      "label": "HSL_jll",
+      "file_type": "code",
+      "source_file": "Main_ACOPF_WARMUP.jl",
+      "source_location": "L30",
+      "_origin": "ast",
+      "id": "hsl_jll",
+      "community": 0,
+      "norm_label": "hsl_jll"
+    },
+    {
+      "label": "Plots",
+      "file_type": "code",
+      "source_file": "Main_ACOPF_WARMUP.jl",
+      "source_location": "L33",
+      "_origin": "ast",
+      "id": "plots",
+      "community": 0,
+      "norm_label": "plots"
+    },
+    {
+      "label": "LaTeXStrings",
+      "file_type": "code",
+      "source_file": "Main_ACOPF_WARMUP.jl",
+      "source_location": "L33",
+      "_origin": "ast",
+      "id": "latexstrings",
+      "community": 0,
+      "norm_label": "latexstrings"
+    },
+    {
+      "label": "Measures",
+      "file_type": "code",
+      "source_file": "Main_ACOPF_WARMUP.jl",
+      "source_location": "L33",
+      "_origin": "ast",
+      "id": "measures",
+      "community": 0,
+      "norm_label": "measures"
+    },
+    {
+      "label": "Trapz",
+      "file_type": "code",
+      "source_file": "Main_ACOPF_WARMUP.jl",
+      "source_location": "L36",
+      "_origin": "ast",
+      "id": "trapz",
+      "community": 0,
+      "norm_label": "trapz"
+    },
+    {
+      "label": "Define_Dyn_Var_E\u03b4Pm!",
+      "file_type": "code",
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": "line 7",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "build_tsc_nospeed_define_dyn_var_edeltapm",
+      "community": 9,
+      "norm_label": "define_dyn_var_e\u03b4pm!"
+    },
+    {
+      "label": "Main_ACOPF_WARMUP (entry point)",
+      "file_type": "code",
+      "source_file": "Main_ACOPF_WARMUP.jl",
+      "source_location": "line 1",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "main_acopf_warmup_main",
+      "community": 1,
+      "norm_label": "main_acopf_warmup (entry point)"
+    },
+    {
+      "label": "9-Bus Generator Data (UC3M Paper)",
+      "file_type": "document",
+      "source_file": "Input_Data/9bus/generators_data_paperUC3M.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "9bus_generators_data_paperuc3m",
+      "community": 1,
+      "norm_label": "9-bus generator data (uc3m paper)"
+    },
+    {
+      "label": "Contingency List (9-bus, cross-validated Anatem/Julia)",
+      "file_type": "document",
+      "source_file": "graphify-out/converted/Contingency List_4bcb6975.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "contingency_list_4bcb6975",
+      "community": 10,
+      "norm_label": "contingency list (9-bus, cross-validated anatem/julia)"
+    },
+    {
+      "label": "Contingency List with Circuit Mapping (9-bus)",
+      "file_type": "document",
+      "source_file": "graphify-out/converted/Contingency List_562779c0.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "contingency_list_562779c0",
+      "community": 10,
+      "norm_label": "contingency list with circuit mapping (9-bus)"
+    },
+    {
+      "label": "AC Optimal Power Flow (ACOPF)",
+      "file_type": "concept",
+      "source_file": "BUILD_ACOPF_MODEL_KCL.jl",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "concept_acopf",
+      "community": 1,
+      "norm_label": "ac optimal power flow (acopf)"
+    },
+    {
+      "label": "Transient Stability Constraints (TSC)",
+      "file_type": "concept",
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "concept_tsc",
+      "community": 10,
+      "norm_label": "transient stability constraints (tsc)"
+    },
+    {
+      "label": "Automatic Voltage Regulator (AVR / Exciter)",
+      "file_type": "concept",
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "concept_avr",
+      "community": 9,
+      "norm_label": "automatic voltage regulator (avr / exciter)"
+    },
+    {
+      "label": "Speed Governor (GVNR)",
+      "file_type": "concept",
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "concept_governor",
+      "community": 4,
+      "norm_label": "speed governor (gvnr)"
+    },
+    {
+      "label": "Center of Inertia (COI) Reference Frame",
+      "file_type": "concept",
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "concept_coi",
+      "community": 7,
+      "norm_label": "center of inertia (coi) reference frame"
+    },
+    {
+      "label": "Admittance Matrix (Ybus)",
+      "file_type": "concept",
+      "source_file": "AF_YBUS_SPARSE.jl",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "concept_ybus",
+      "community": 1,
+      "norm_label": "admittance matrix (ybus)"
+    },
+    {
+      "label": "Swing Equation (Trapezoidal Discretization)",
+      "file_type": "concept",
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "concept_swing_equation",
+      "community": 4,
+      "norm_label": "swing equation (trapezoidal discretization)"
+    },
+    {
+      "label": "4th-Order Generator Model (Ed, Eq, Id, Iq)",
+      "file_type": "concept",
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "concept_4th_order_generator",
+      "community": 9,
+      "norm_label": "4th-order generator model (ed, eq, id, iq)"
+    },
+    {
+      "label": "ZIP Load Model",
+      "file_type": "concept",
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "concept_zip_load",
+      "community": 8,
+      "norm_label": "zip load model"
+    },
+    {
+      "label": "Numerical Derivative Techniques",
+      "file_type": "concept",
+      "source_file": "AF_DERIVATIVE_TECHINIQUES.jl",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "concept_numerical_derivative",
+      "community": 5,
+      "norm_label": "numerical derivative techniques"
+    },
+    {
+      "label": "Lagrange Polynomial Interpolation for Derivatives",
+      "file_type": "rationale",
+      "source_file": "AF_DERIVATIVE_TECHINIQUES.jl",
+      "source_location": "line 8",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "concept_lagrange_interpolation",
+      "community": 5,
+      "norm_label": "lagrange polynomial interpolation for derivatives"
+    }
+  ],
+  "links": [
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "AF_CLEAN_TERMINAL.jl",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "af_clean_terminal",
+      "target": "af_clean_terminal_clean_terminal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Main_ACOPF_WARMUP.jl",
+      "source_location": "line 51",
+      "weight": 1.0,
+      "source": "main_acopf_warmup_main",
+      "target": "af_clean_terminal_clean_terminal"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "AF_DERIVATIVE_TECHINIQUES.jl",
+      "source_location": "L86",
+      "weight": 1.0,
+      "source": "af_derivative_techiniques",
+      "target": "af_derivative_techiniques_calculate_derivative_cfd",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "AF_DERIVATIVE_TECHINIQUES.jl",
+      "source_location": "L48",
+      "weight": 1.0,
+      "source": "af_derivative_techiniques",
+      "target": "af_derivative_techiniques_calculate_derivatives_cfdd",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "AF_DERIVATIVE_TECHINIQUES.jl",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "af_derivative_techiniques",
+      "target": "af_derivative_techiniques_calculate_derivatives_lagrange_interpolator",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "AF_DERIVATIVE_TECHINIQUES.jl",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "af_derivative_techiniques_calculate_derivatives_cfdd",
+      "target": "af_derivative_techiniques_calculate_derivatives_lagrange_interpolator"
+    },
+    {
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "AF_DERIVATIVE_TECHINIQUES.jl",
+      "source_location": "line 9",
+      "weight": 1.0,
+      "source": "af_derivative_techiniques_calculate_derivatives_lagrange_interpolator",
+      "target": "concept_lagrange_interpolation"
+    },
+    {
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "AF_DERIVATIVE_TECHINIQUES.jl",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "af_derivative_techiniques_calculate_derivatives_lagrange_interpolator",
+      "target": "concept_numerical_derivative"
+    },
+    {
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "AF_DERIVATIVE_TECHINIQUES.jl",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "af_derivative_techiniques_calculate_derivatives_cfdd",
+      "target": "concept_numerical_derivative"
+    },
+    {
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "AF_DERIVATIVE_TECHINIQUES.jl",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "af_derivative_techiniques_calculate_derivative_cfd",
+      "target": "concept_numerical_derivative"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "AF_SAVE_OUTPUT.jl",
+      "source_location": "line 701",
+      "weight": 1.0,
+      "source": "af_save_output_manage_dyn_results",
+      "target": "af_derivative_techiniques_calculate_derivative_cfd"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "AF_MANAGEMENT.jl",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "af_management",
+      "target": "af_management_calculate_ac_power_flow",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "AF_MANAGEMENT.jl",
+      "source_location": "L87",
+      "weight": 1.0,
+      "source": "af_management",
+      "target": "af_management_manage_bus_gen_circ",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "AF_MANAGEMENT.jl",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "af_management_calculate_ac_power_flow",
+      "target": "concept_acopf"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "AF_SAVE_OUTPUT.jl",
+      "source_location": "line 230",
+      "weight": 1.0,
+      "source": "af_save_output_save_solution_model_kcl",
+      "target": "af_management_calculate_ac_power_flow"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Main_ACOPF_WARMUP.jl",
+      "source_location": "line 151",
+      "weight": 1.0,
+      "source": "main_acopf_warmup_main",
+      "target": "af_management_manage_bus_gen_circ"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "AF_READ_DATA.jl",
+      "source_location": "L216",
+      "weight": 1.0,
+      "source": "af_read_data",
+      "target": "af_read_data_change_buses_labels",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "AF_READ_DATA.jl",
+      "source_location": "L201",
+      "weight": 1.0,
+      "source": "af_read_data",
+      "target": "af_read_data_mapping_buses_labels",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "AF_READ_DATA.jl",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "af_read_data",
+      "target": "af_read_data_read_input_data",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "AF_READ_DATA.jl",
+      "source_location": "L229",
+      "weight": 1.0,
+      "source": "af_read_data",
+      "target": "af_read_data_reverse_buses_labels",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "AF_READ_DATA.jl",
+      "source_location": "line 188",
+      "weight": 1.0,
+      "context": "call",
+      "confidence_score": 1.0,
+      "source": "af_read_data_read_input_data",
+      "target": "af_read_data_mapping_buses_labels"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Main_ACOPF_WARMUP.jl",
+      "source_location": "line 124",
+      "weight": 1.0,
+      "source": "main_acopf_warmup_main",
+      "target": "af_read_data_read_input_data"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "AF_SAVE_OUTPUT.jl",
+      "source_location": "L54",
+      "weight": 1.0,
+      "source": "af_save_output",
+      "target": "af_save_output_export_acopf_model",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "AF_SAVE_OUTPUT.jl",
+      "source_location": "L1233",
+      "weight": 1.0,
+      "source": "af_save_output",
+      "target": "af_save_output_export_dyn_model",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "AF_SAVE_OUTPUT.jl",
+      "source_location": "L496",
+      "weight": 1.0,
+      "source": "af_save_output",
+      "target": "af_save_output_manage_dyn_results",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "AF_SAVE_OUTPUT.jl",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "af_save_output",
+      "target": "af_save_output_print_input_parameters",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "AF_SAVE_OUTPUT.jl",
+      "source_location": "L1575",
+      "weight": 1.0,
+      "source": "af_save_output",
+      "target": "af_save_output_save_duals_acopf_model",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "AF_SAVE_OUTPUT.jl",
+      "source_location": "L1424",
+      "weight": 1.0,
+      "source": "af_save_output",
+      "target": "af_save_output_save_duals_dynamic_model",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "AF_SAVE_OUTPUT.jl",
+      "source_location": "L794",
+      "weight": 1.0,
+      "source": "af_save_output",
+      "target": "af_save_output_save_dyn_results_csv",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "AF_SAVE_OUTPUT.jl",
+      "source_location": "L987",
+      "weight": 1.0,
+      "source": "af_save_output",
+      "target": "af_save_output_save_dyn_results_plots",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "AF_SAVE_OUTPUT.jl",
+      "source_location": "L356",
+      "weight": 1.0,
+      "source": "af_save_output",
+      "target": "af_save_output_save_resultscsv_acopf",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "AF_SAVE_OUTPUT.jl",
+      "source_location": "L417",
+      "weight": 1.0,
+      "source": "af_save_output",
+      "target": "af_save_output_save_resultstxt_acopf",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "AF_SAVE_OUTPUT.jl",
+      "source_location": "L201",
+      "weight": 1.0,
+      "source": "af_save_output",
+      "target": "af_save_output_save_solution_model_kcl",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Main_ACOPF_WARMUP.jl",
+      "source_location": "line 117",
+      "weight": 1.0,
+      "source": "main_acopf_warmup_main",
+      "target": "af_save_output_print_input_parameters"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "AF_SAVE_OUTPUT.jl",
+      "source_location": "line 348",
+      "weight": 1.0,
+      "context": "call",
+      "confidence_score": 1.0,
+      "source": "af_save_output_save_solution_model_kcl",
+      "target": "af_save_output_save_resultscsv_acopf"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "AF_SAVE_OUTPUT.jl",
+      "source_location": "line 347",
+      "weight": 1.0,
+      "context": "call",
+      "confidence_score": 1.0,
+      "source": "af_save_output_save_solution_model_kcl",
+      "target": "af_save_output_save_resultstxt_acopf"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Main_ACOPF_WARMUP.jl",
+      "source_location": "line 316",
+      "weight": 1.0,
+      "source": "main_acopf_warmup_main",
+      "target": "af_save_output_save_solution_model_kcl"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "AF_SAVE_OUTPUT.jl",
+      "source_location": "line 784",
+      "weight": 1.0,
+      "context": "call",
+      "confidence_score": 1.0,
+      "source": "af_save_output_manage_dyn_results",
+      "target": "af_save_output_save_dyn_results_csv"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "AF_SAVE_OUTPUT.jl",
+      "source_location": "line 774",
+      "weight": 1.0,
+      "context": "call",
+      "confidence_score": 1.0,
+      "source": "af_save_output_manage_dyn_results",
+      "target": "af_save_output_save_dyn_results_plots"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Main_ACOPF_WARMUP.jl",
+      "source_location": "line 322",
+      "weight": 1.0,
+      "source": "main_acopf_warmup_main",
+      "target": "af_save_output_manage_dyn_results"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "AF_YBUS_SPARSE.jl",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "af_ybus_sparse",
+      "target": "af_ybus_sparse_calculate_ybus",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "AF_YBUS_SPARSE.jl",
+      "source_location": "L62",
+      "weight": 1.0,
+      "source": "af_ybus_sparse",
+      "target": "af_ybus_sparse_calculate_ybus_fault",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "AF_YBUS_SPARSE.jl",
+      "source_location": "L73",
+      "weight": 1.0,
+      "source": "af_ybus_sparse",
+      "target": "af_ybus_sparse_calculate_ybus_postf",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "AF_YBUS_SPARSE.jl",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "af_ybus_sparse_calculate_ybus",
+      "target": "concept_ybus"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Main_ACOPF_WARMUP.jl",
+      "source_location": "line 158",
+      "weight": 1.0,
+      "source": "main_acopf_warmup_main",
+      "target": "af_ybus_sparse_calculate_ybus"
+    },
+    {
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "AF_YBUS_SPARSE.jl",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "af_ybus_sparse_calculate_ybus_fault",
+      "target": "concept_ybus"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Main_ACOPF_WARMUP.jl",
+      "source_location": "line 161",
+      "weight": 1.0,
+      "source": "main_acopf_warmup_main",
+      "target": "af_ybus_sparse_calculate_ybus_fault"
+    },
+    {
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "AF_YBUS_SPARSE.jl",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "af_ybus_sparse_calculate_ybus_postf",
+      "target": "concept_ybus"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Main_ACOPF_WARMUP.jl",
+      "source_location": "line 166",
+      "weight": 1.0,
+      "source": "main_acopf_warmup_main",
+      "target": "af_ybus_sparse_calculate_ybus_postf"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "BUILD_ACOPF_MODEL_KCL.jl",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "build_acopf_model_kcl",
+      "target": "build_acopf_model_kcl_make_acopf_model",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "Input_Data/9bus/generators_data_paperUC3M.txt",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "9bus_generators_data_paperuc3m",
+      "target": "build_acopf_model_kcl_make_acopf_model"
+    },
+    {
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "BUILD_ACOPF_MODEL_KCL.jl",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "build_acopf_model_kcl_make_acopf_model",
+      "target": "concept_acopf"
+    },
+    {
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "BUILD_ACOPF_MODEL_KCL.jl",
+      "source_location": "line 3",
+      "weight": 1.0,
+      "source": "build_acopf_model_kcl_make_acopf_model",
+      "target": "concept_ybus"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Main_ACOPF_WARMUP.jl",
+      "source_location": "line 229",
+      "weight": 1.0,
+      "source": "main_acopf_warmup_main",
+      "target": "build_acopf_model_kcl_make_acopf_model"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": "L171",
+      "weight": 1.0,
+      "source": "build_tsc_nospeed",
+      "target": "build_tsc_nospeed_def_dyn_fault_all",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": "L331",
+      "weight": 1.0,
+      "source": "build_tsc_nospeed",
+      "target": "build_tsc_nospeed_def_dyn_fault_coi",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": "L614",
+      "weight": 1.0,
+      "source": "build_tsc_nospeed",
+      "target": "build_tsc_nospeed_def_dyn_fault_emf",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": "L402",
+      "weight": 1.0,
+      "source": "build_tsc_nospeed",
+      "target": "build_tsc_nospeed_def_dyn_fault_eqconst_peqe",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": "L1166",
+      "weight": 1.0,
+      "source": "build_tsc_nospeed",
+      "target": "build_tsc_nospeed_def_dyn_fault_exciter",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": "L1340",
+      "weight": 1.0,
+      "source": "build_tsc_nospeed",
+      "target": "build_tsc_nospeed_def_dyn_fault_governor",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": "L362",
+      "weight": 1.0,
+      "source": "build_tsc_nospeed",
+      "target": "build_tsc_nospeed_def_dyn_fault_rel_coi",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": "L556",
+      "weight": 1.0,
+      "source": "build_tsc_nospeed",
+      "target": "build_tsc_nospeed_def_dyn_fault_swing",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": "L1137",
+      "weight": 1.0,
+      "source": "build_tsc_nospeed",
+      "target": "build_tsc_nospeed_def_dyn_init_exciter",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": "L1307",
+      "weight": 1.0,
+      "source": "build_tsc_nospeed",
+      "target": "build_tsc_nospeed_def_dyn_init_governor",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": "L678",
+      "weight": 1.0,
+      "source": "build_tsc_nospeed",
+      "target": "build_tsc_nospeed_def_dyn_postf_all",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": "L815",
+      "weight": 1.0,
+      "source": "build_tsc_nospeed",
+      "target": "build_tsc_nospeed_def_dyn_postf_coi",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": "L1072",
+      "weight": 1.0,
+      "source": "build_tsc_nospeed",
+      "target": "build_tsc_nospeed_def_dyn_postf_emf",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": "L873",
+      "weight": 1.0,
+      "source": "build_tsc_nospeed",
+      "target": "build_tsc_nospeed_def_dyn_postf_eqconst_peqe",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": "L1236",
+      "weight": 1.0,
+      "source": "build_tsc_nospeed",
+      "target": "build_tsc_nospeed_def_dyn_postf_exciter",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": "L1418",
+      "weight": 1.0,
+      "source": "build_tsc_nospeed",
+      "target": "build_tsc_nospeed_def_dyn_postf_governor",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": "L843",
+      "weight": 1.0,
+      "source": "build_tsc_nospeed",
+      "target": "build_tsc_nospeed_def_dyn_postf_rel_coi",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": "L1011",
+      "weight": 1.0,
+      "source": "build_tsc_nospeed",
+      "target": "build_tsc_nospeed_def_dyn_postf_swing",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "build_tsc_nospeed",
+      "target": "build_tsc_nospeed_define_dyn_var_e\u03b4pm",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": "line 314",
+      "weight": 1.0,
+      "context": "call",
+      "confidence_score": 1.0,
+      "source": "build_tsc_nospeed_def_dyn_fault_all",
+      "target": "build_tsc_nospeed_def_dyn_fault_coi"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": "line 325",
+      "weight": 1.0,
+      "context": "call",
+      "confidence_score": 1.0,
+      "source": "build_tsc_nospeed_def_dyn_fault_all",
+      "target": "build_tsc_nospeed_def_dyn_fault_emf"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": "line 320",
+      "weight": 1.0,
+      "context": "call",
+      "confidence_score": 1.0,
+      "source": "build_tsc_nospeed_def_dyn_fault_all",
+      "target": "build_tsc_nospeed_def_dyn_fault_eqconst_peqe"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": "L308",
+      "weight": 1.0,
+      "context": "call",
+      "source": "build_tsc_nospeed_def_dyn_fault_all",
+      "target": "build_tsc_nospeed_def_dyn_fault_exciter",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": "L311",
+      "weight": 1.0,
+      "context": "call",
+      "source": "build_tsc_nospeed_def_dyn_fault_all",
+      "target": "build_tsc_nospeed_def_dyn_fault_governor",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": "line 317",
+      "weight": 1.0,
+      "context": "call",
+      "confidence_score": 1.0,
+      "source": "build_tsc_nospeed_def_dyn_fault_all",
+      "target": "build_tsc_nospeed_def_dyn_fault_rel_coi"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": "line 323",
+      "weight": 1.0,
+      "context": "call",
+      "confidence_score": 1.0,
+      "source": "build_tsc_nospeed_def_dyn_fault_all",
+      "target": "build_tsc_nospeed_def_dyn_fault_swing"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": "line 308",
+      "weight": 1.0,
+      "source": "build_tsc_nospeed_def_dyn_fault_all",
+      "target": "concept_avr"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": "line 311",
+      "weight": 1.0,
+      "source": "build_tsc_nospeed_def_dyn_fault_all",
+      "target": "concept_governor"
+    },
+    {
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "build_tsc_nospeed_def_dyn_fault_all",
+      "target": "concept_tsc"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Main_ACOPF_WARMUP.jl",
+      "source_location": "line 269",
+      "weight": 1.0,
+      "source": "main_acopf_warmup_main",
+      "target": "build_tsc_nospeed_def_dyn_fault_all"
+    },
+    {
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "build_tsc_nospeed_def_dyn_fault_coi",
+      "target": "concept_coi"
+    },
+    {
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": "line 425",
+      "weight": 1.0,
+      "source": "build_tsc_nospeed_def_dyn_fault_eqconst_peqe",
+      "target": "concept_ybus"
+    },
+    {
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": "line 534",
+      "weight": 1.0,
+      "source": "build_tsc_nospeed_def_dyn_fault_eqconst_peqe",
+      "target": "concept_zip_load"
+    },
+    {
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "build_tsc_nospeed_def_dyn_fault_swing",
+      "target": "concept_swing_equation"
+    },
+    {
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "build_tsc_nospeed_def_dyn_fault_emf",
+      "target": "concept_4th_order_generator"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": "line 798",
+      "weight": 1.0,
+      "context": "call",
+      "confidence_score": 1.0,
+      "source": "build_tsc_nospeed_def_dyn_postf_all",
+      "target": "build_tsc_nospeed_def_dyn_postf_coi"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": "L809",
+      "weight": 1.0,
+      "context": "call",
+      "source": "build_tsc_nospeed_def_dyn_postf_all",
+      "target": "build_tsc_nospeed_def_dyn_postf_emf",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": "line 804",
+      "weight": 1.0,
+      "context": "call",
+      "confidence_score": 1.0,
+      "source": "build_tsc_nospeed_def_dyn_postf_all",
+      "target": "build_tsc_nospeed_def_dyn_postf_eqconst_peqe"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": "L793",
+      "weight": 1.0,
+      "context": "call",
+      "source": "build_tsc_nospeed_def_dyn_postf_all",
+      "target": "build_tsc_nospeed_def_dyn_postf_exciter",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": "L795",
+      "weight": 1.0,
+      "context": "call",
+      "source": "build_tsc_nospeed_def_dyn_postf_all",
+      "target": "build_tsc_nospeed_def_dyn_postf_governor",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": "line 801",
+      "weight": 1.0,
+      "context": "call",
+      "confidence_score": 1.0,
+      "source": "build_tsc_nospeed_def_dyn_postf_all",
+      "target": "build_tsc_nospeed_def_dyn_postf_rel_coi"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": "L807",
+      "weight": 1.0,
+      "context": "call",
+      "source": "build_tsc_nospeed_def_dyn_postf_all",
+      "target": "build_tsc_nospeed_def_dyn_postf_swing",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": "line 793",
+      "weight": 1.0,
+      "source": "build_tsc_nospeed_def_dyn_postf_all",
+      "target": "concept_avr"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": "line 795",
+      "weight": 1.0,
+      "source": "build_tsc_nospeed_def_dyn_postf_all",
+      "target": "concept_governor"
+    },
+    {
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "build_tsc_nospeed_def_dyn_postf_all",
+      "target": "concept_tsc"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Main_ACOPF_WARMUP.jl",
+      "source_location": "line 274",
+      "weight": 1.0,
+      "source": "main_acopf_warmup_main",
+      "target": "build_tsc_nospeed_def_dyn_postf_all"
+    },
+    {
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "build_tsc_nospeed_def_dyn_postf_coi",
+      "target": "concept_coi"
+    },
+    {
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": "line 895",
+      "weight": 1.0,
+      "source": "build_tsc_nospeed_def_dyn_postf_eqconst_peqe",
+      "target": "concept_ybus"
+    },
+    {
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "build_tsc_nospeed_def_dyn_postf_eqconst_peqe",
+      "target": "concept_zip_load"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "Main_ACOPF_WARMUP.jl",
+      "source_location": "L26",
+      "weight": 1.0,
+      "context": "import",
+      "source": "main_acopf_warmup",
+      "target": "csv",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "Main_ACOPF_WARMUP.jl",
+      "source_location": "L26",
+      "weight": 1.0,
+      "context": "import",
+      "source": "main_acopf_warmup",
+      "target": "dataframes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "Main_ACOPF_WARMUP.jl",
+      "source_location": "L26",
+      "weight": 1.0,
+      "context": "import",
+      "source": "main_acopf_warmup",
+      "target": "datastructures",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "Main_ACOPF_WARMUP.jl",
+      "source_location": "L26",
+      "weight": 1.0,
+      "context": "import",
+      "source": "main_acopf_warmup",
+      "target": "dates",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "Main_ACOPF_WARMUP.jl",
+      "source_location": "L30",
+      "weight": 1.0,
+      "context": "import",
+      "source": "main_acopf_warmup",
+      "target": "hsl_jll",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "Main_ACOPF_WARMUP.jl",
+      "source_location": "L29",
+      "weight": 1.0,
+      "context": "import",
+      "source": "main_acopf_warmup",
+      "target": "ipopt",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "Main_ACOPF_WARMUP.jl",
+      "source_location": "L29",
+      "weight": 1.0,
+      "context": "import",
+      "source": "main_acopf_warmup",
+      "target": "jump",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "Main_ACOPF_WARMUP.jl",
+      "source_location": "L33",
+      "weight": 1.0,
+      "context": "import",
+      "source": "main_acopf_warmup",
+      "target": "latexstrings",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "Main_ACOPF_WARMUP.jl",
+      "source_location": "L23",
+      "weight": 1.0,
+      "context": "import",
+      "source": "main_acopf_warmup",
+      "target": "linearalgebra",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "Main_ACOPF_WARMUP.jl",
+      "source_location": "L29",
+      "weight": 1.0,
+      "context": "import",
+      "source": "main_acopf_warmup",
+      "target": "madnlp",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "Main_ACOPF_WARMUP.jl",
+      "source_location": "L33",
+      "weight": 1.0,
+      "context": "import",
+      "source": "main_acopf_warmup",
+      "target": "measures",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "Main_ACOPF_WARMUP.jl",
+      "source_location": "L26",
+      "weight": 1.0,
+      "context": "import",
+      "source": "main_acopf_warmup",
+      "target": "numericio",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "Main_ACOPF_WARMUP.jl",
+      "source_location": "L33",
+      "weight": 1.0,
+      "context": "import",
+      "source": "main_acopf_warmup",
+      "target": "plots",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "Main_ACOPF_WARMUP.jl",
+      "source_location": "L26",
+      "weight": 1.0,
+      "context": "import",
+      "source": "main_acopf_warmup",
+      "target": "printf",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "Main_ACOPF_WARMUP.jl",
+      "source_location": "L23",
+      "weight": 1.0,
+      "context": "import",
+      "source": "main_acopf_warmup",
+      "target": "sparsearrays",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "Main_ACOPF_WARMUP.jl",
+      "source_location": "L36",
+      "weight": 1.0,
+      "context": "import",
+      "source": "main_acopf_warmup",
+      "target": "trapz",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": "line 28",
+      "weight": 1.0,
+      "source": "build_tsc_nospeed_define_dyn_var_edeltapm",
+      "target": "concept_4th_order_generator"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "build_tsc_nospeed_define_dyn_var_edeltapm",
+      "target": "concept_avr"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Main_ACOPF_WARMUP.jl",
+      "source_location": "line 255",
+      "weight": 1.0,
+      "source": "main_acopf_warmup_main",
+      "target": "build_tsc_nospeed_define_dyn_var_edeltapm"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "graphify-out/converted/Contingency List_4bcb6975.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "contingency_list_4bcb6975",
+      "target": "concept_tsc"
+    },
+    {
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "graphify-out/converted/Contingency List_4bcb6975.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "contingency_list_4bcb6975",
+      "target": "contingency_list_562779c0"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "graphify-out/converted/Contingency List_562779c0.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "contingency_list_562779c0",
+      "target": "concept_tsc"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "concept_avr",
+      "target": "concept_4th_order_generator"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "BUILD_TSC_NOSPEED.jl",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "concept_governor",
+      "target": "concept_swing_equation"
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "tsc_opf_full_pipeline",
+      "label": "TSC-OPF Full Solution Pipeline (warm-start ACOPF then TSC)",
+      "nodes": [
+        "main_acopf_warmup_main",
+        "build_acopf_model_kcl_make_acopf_model",
+        "build_tsc_nospeed_def_dyn_fault_all",
+        "build_tsc_nospeed_def_dyn_postf_all",
+        "af_save_output_manage_dyn_results"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Main_ACOPF_WARMUP.jl"
+    },
+    {
+      "id": "ybus_three_periods",
+      "label": "Admittance Matrix for Three Operating Periods (pre-fault, fault, post-fault)",
+      "nodes": [
+        "af_ybus_sparse_calculate_ybus",
+        "af_ybus_sparse_calculate_ybus_fault",
+        "af_ybus_sparse_calculate_ybus_postf"
+      ],
+      "relation": "implement",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "AF_YBUS_SPARSE.jl"
+    },
+    {
+      "id": "dynamic_model_components",
+      "label": "Dynamic Generator Model Components (AVR, Governor, Swing, 4th-Order EMF, COI)",
+      "nodes": [
+        "concept_avr",
+        "concept_governor",
+        "concept_swing_equation",
+        "concept_4th_order_generator",
+        "concept_coi"
+      ],
+      "relation": "form",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "BUILD_TSC_NOSPEED.jl"
+    }
+  ],
+  "built_at_commit": "5d3bca32f558cf16b1d2f6fb819aa37d21016228"
+}
